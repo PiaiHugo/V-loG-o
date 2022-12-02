@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_default"
+    app:startDestination="@id/accueilFragment">
+    <fragment
+        android:id="@+id/accueilFragment"
+        android:name="com.example.velogeo.ui.home.AccueilFragment"
+        android:label="fragment_accueil"
+        tools:layout="@layout/fragment_accueil">
+        <action
+            android:id="@+id/action_accueilFragment_to_containerFragment"
+            app:destination="@id/containerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.velogeo.ui.home.MapsFragment"
+        android:label="MapsFragment">
+        <argument
+            android:name="ApiDataTransport"
+            app:argType="com.example.velogeo.models.ApiDataTransport" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentList"
+        android:name="com.example.velogeo.ui.home.FragmentList"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list">
+        <argument
+            android:name="ApiDataTransport"
+            app:argType="com.example.velogeo.models.ApiDataTransport" />
+    </fragment>
+    <fragment
+        android:id="@+id/containerFragment"
+        android:name="com.example.velogeo.ui.home.ContainerFragment"
+        android:label="fragment_container"
+        tools:layout="@layout/fragment_container">
+        <argument
+            android:name="ApiDataTransport"
+            app:argType="com.example.velogeo.models.ApiDataTransport" />
+    </fragment>
+</navigation>
